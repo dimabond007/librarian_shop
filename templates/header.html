@@ -1,0 +1,35 @@
+<div class="header">
+    <div class="logo">
+        <img src="images\IITC-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="button">Search</button>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <select id="navbar-dropdown" class="navbar-dropdown">
+            <option value="">More</option>
+            <option value="#home">Home</option>
+            <option value="#services">Services</option>
+            <option value="#about">About</option>
+            <option value="#contact">Contact</option>
+        </select>
+    </nav>
+</div>
+</body>
+<script>
+
+    document.getElementById('navbar-dropdown').addEventListener('change', function () {
+        var url = this.value;
+        if (url) {
+            window.location.href = url;
+        }
+    });
+
+</script>

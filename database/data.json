@@ -1,0 +1,28 @@
+{
+    "books": [
+        {
+            "id": 0,
+            "name": "book1",
+            "author": "author1",
+            "num_pages": 1,
+            "short_description": "book 1",
+            "long_description": "book 1 long description",
+            "url_image": "http://",
+            "num copies": 0,
+            "categories": "fantasy",
+            "ISBN": 13243125
+        },
+        {
+            "id": 1,
+            "name": "book2",
+            "author": "author2",
+            "num_pages": 1,
+            "short_description": "book 2",
+            "long_description": "book 2 long description",
+            "url_image": "http://",
+            "num copies": 0,
+            "categories": "fantasy",
+            "ISBN": 234523
+        }
+    ]
+}
