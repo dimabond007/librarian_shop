@@ -2,7 +2,7 @@ let books_block = document.querySelector('.books_block')
 getBooks();
 
 function getBooks(page = 1) {
-    let link = 'http://localhost:8112';
+    let link = 'http://localhost:8113';
     let linkBooks = link + '/items?_page=' + page + '&_per_page=20';
     console.log(linkBooks);
     axios.get(linkBooks).then(function (response) {
@@ -14,13 +14,32 @@ function getBooks(page = 1) {
             let newBook = document.createElement('div');
             newBook.className = 'book';
             newBook.addEventListener('click', function (e) {
-                // let bookId = e.target.dataset.id;
+                let bookId = this.dataset.id;
+
+                axios.get('http://localhost:8113/items/' + bookId).then(function (resBook) {
+
+                    let titleJson = resBook.data.volumeInfo.title;
+
+                    let link = '../templates/single.html'
+                    fetch(link)
+                        .then(res => res.text())
+                        .then(function (res) {
+
+
+                            let parser = new DOMParser();
+                            let doc = parser.parseFromString(res, 'text/html');
+
+                            let titleBook = doc.querySelector('.title_book');
+
+                            console.log(doc);
+                            titleBook.innerHTML = titleJson;
+                            books_block.innerHTML = doc.querySelector('.single_book').outerHTML;
+                            console.log()
+                        });
+                });
                 // window.location.href = link + '/items/' + bookId;
                 // console.log(link + '/items/' + bookId);
-                let link = '../templates/single.html'
-                fetch(link).then(function (res) {
-                    console.log(res)
-                });
+
             });
             newBook.dataset.id = book.id;
             if (book.volumeInfo.imageLinks) {
@@ -37,6 +56,7 @@ function getBooks(page = 1) {
             books_container.appendChild(newBook);
 
         }
+        document.getElementById('content').style.minHeight = 'auto'
         books_block.appendChild(books_container);
 
         let pagination = document.createElement('div');
