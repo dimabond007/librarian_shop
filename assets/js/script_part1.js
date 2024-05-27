@@ -2,6 +2,7 @@ let books_block = document.querySelector('.books_block')
 getBooks();
 
 function getBooks(page = 1) {
+    books_block.innerHTML += ('<h2 class="booksHeader">Our Books</h2>');
     let link = 'http://localhost:8113';
     let linkBooks = link + '/items?_page=' + page + '&_per_page=20';
     console.log(linkBooks);
@@ -19,26 +20,45 @@ function getBooks(page = 1) {
                 axios.get('http://localhost:8113/items/' + bookId).then(function (resBook) {
 
                     let titleJson = resBook.data.volumeInfo.title;
+                    let imageJson = resBook.data.volumeInfo.imageLinks.thumbnail;
+                    let autorsJson = resBook.data.volumeInfo.authors.join(', ');
+                    let date = new Date(resBook.data.volumeInfo.publishedDate);
+                    let year_bookJson = date.getFullYear();
+                    let desc_bookJson = resBook.data.volumeInfo.description;
+
+                    console.log(year_bookJson);
+
 
                     let link = '../templates/single.html'
                     fetch(link)
                         .then(res => res.text())
                         .then(function (res) {
-
-
                             let parser = new DOMParser();
                             let doc = parser.parseFromString(res, 'text/html');
 
                             let titleBook = doc.querySelector('.title_book');
+                            let imageBook = doc.querySelector('.img_book img');
+                            let authors = doc.querySelector('.authors_book')
+                            let year_book = doc.querySelector('.year_book')
+                            let description_book = doc.querySelector('.description_book')
 
-                            console.log(doc);
+                            // let authors = doc.querySelector('.authors_book')
+
+
+
                             titleBook.innerHTML = titleJson;
+                            imageBook.src = imageJson;
+                            imageBook.className = "bookImage";
+                            authors.innerHTML = 'By ' + autorsJson
+                            year_book.innerHTML = year_bookJson
+                            description_book.innerHTML = desc_bookJson;
+
+
+
                             books_block.innerHTML = doc.querySelector('.single_book').outerHTML;
                             console.log()
                         });
                 });
-                // window.location.href = link + '/items/' + bookId;
-                // console.log(link + '/items/' + bookId);
 
             });
             newBook.dataset.id = book.id;
@@ -86,3 +106,5 @@ function getBooks(page = 1) {
         books_block.appendChild(pagination);
     });
 }
+
+
