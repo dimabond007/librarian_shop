@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <include src="./header.html"></include>
+    </div>
+    <div id="content" class="form_book">
+        <div class="create_book">
+            <form action="" id="create_book_form">
+                <input type="text" name="img_url_form" placeholder="Please enter image URL" required>
+                <input type="text" name="title_book_form" placeholder="Please enter Book title" required>
+                <input type="text" name="authors_book_form" placeholder="Please enter authors" required>
+                <input type="text" name="book_published_form" placeholder="Please enter date of book published"
+                    required>
+                <input type="text" name="book_isbn_form" placeholder="Please enter ISBN" required>
+                <input type="text" name="book_page_count_form" placeholder="Please enter pages of book" required>
+                <input type="text" name="book_publisher_form" placeholder="Please enter name of publisher" required>
+                <input type="text" name="book_language_form" placeholder="Please enter language of book" required>
+                <button type="submit">Create book</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <include src="./footer.html"></include>
+    </div>
+    <div class='container_loader hidden'>
+        <div class="loader">
+
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/routs.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script type="module" src="../assets/js/script.js"></script>
+</body>
+
+</html>
