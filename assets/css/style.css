@@ -5,6 +5,16 @@ body {
 }
 
 
+body h3 {
+    text-align: center;
+}
+
+
+body p {
+    text-align: center;
+
+}
+
 .booksHeader {
     text-align: center;
     justify-content: center;
@@ -165,6 +175,9 @@ footer {
     margin-top: 20px;
 }
 
+
+
+
 .books_block .book {
     padding: 20px;
     flex: 1 0 15%;
@@ -237,6 +250,57 @@ div#pagination button {
 }
 
 
+.main_book_content {
+    display: flex;
+    margin: 30px;
+    gap: 60px;
+    justify-content: center;
+
+}
+
+
+
+
+
+
+
+.bookImage .content_book {
+    padding-left: 100px;
+    padding-top: 40px;
+    flex: 1;
+
+}
+
+
+.description_book {
+    margin: auto;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    max-width: 800px;
+}
+
+
+.additional_details {
+    display: flex;
+    gap: 50px;
+    text-align: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .hidden {
     display: none;
@@ -276,7 +340,11 @@ div#pagination button {
     .books_block img {
         height: 205px;
         width: auto;
-        gap: 5px;
+    }
+
+    .book {
+        margin: 15px;
+        justify-content: center;
     }
 
 }
