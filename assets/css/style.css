@@ -34,11 +34,11 @@ body p {
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
+    margin: auto;
 }
 
 .logo img {
-    height: 70px;
-    width: auto;
+    max-height: 100px;
 }
 
 .search-bar {
@@ -255,6 +255,8 @@ div#pagination button {
     margin: 30px;
     gap: 60px;
     justify-content: center;
+    max-width: 850px;
+    margin: 60px auto;
 
 }
 
@@ -287,10 +289,34 @@ div#pagination button {
     gap: 50px;
     text-align: center;
     justify-content: center;
-    margin: 50px;
+    width: 150px;
+    margin: 55px auto;
 }
 
+.buttons_wrapper {
+    text-align: center;
+    padding: 30px 20px;
 
+}
+
+.buttons_wrapper button {
+    width: 150px;
+    height: 45px;
+    margin: 25px;
+    font-weight: 500;
+    font-size: large;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+.buttons_wrapper button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
 
 
 
