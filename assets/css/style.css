@@ -28,13 +28,16 @@ body p {
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 30px;
     background-color: #4A90E2;
     padding: 15px 30px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
     margin: auto;
+    padding-left: 130px;
+    padding-right: 130px;
+
 }
 
 .logo img {
@@ -49,8 +52,6 @@ body p {
     padding: 5px 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
-    max-width: 600px;
-    margin: 10px 0;
 }
 
 .search-bar input {
@@ -84,9 +85,7 @@ body p {
     flex-wrap: wrap;
 }
 
-.nav ul li {
-    margin-left: 20px;
-}
+
 
 .nav ul li a {
     text-decoration: none;
@@ -320,11 +319,131 @@ div#pagination button {
 
 
 
+.form_book {
+    text-align: center;
+    padding: 20px 0 80px 0;
+}
+
+.createABookH2 {
+    text-align: center;
+    justify-content: center;
+    margin: 60px auto 15px auto;
+    max-width: 800px;
+    color: #4a90e2;
+    font-size: 45px;
+}
+
+.create_book {
+    padding: 35px;
+    max-width: 650px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+#create_book_form {
+    margin: 5px;
+}
+
+.createInputs {
+    height: 35px;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 
 
+}
+
+.textarea {
+    margin: 15px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+.createButton {
+    margin: auto;
+    justify-content: center;
+    display: block;
+    width: 150px;
+    height: 45px;
+    font-size: large;
+    margin-top: 15px;
+    background-color: #3498db;
+    border: 1px solid;
+    border-radius: 15px;
+}
 
 
+/* Keyframes for bounce animation */
+@keyframes bounceIn {
 
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Style for the back button */
+.backButton {
+    position: fixed;
+    background-color: #4a90e2;
+    left: 10px;
+    border: 1px solid transparent;
+    /* Ensure border is visible */
+    border-radius: 50px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: larger;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: bounceIn 1s ease;
+    /* Apply the bounce animation */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the back button */
+.backButton:hover {
+    background-color: #357ABD;
+    /* Darker shade for hover effect */
+    animation: pulse 1s infinite;
+    /* Apply the pulse animation */
+}
 
 
 
