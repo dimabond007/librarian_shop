@@ -1,5 +1,7 @@
 const currentUrl = window.location.href;
 let books_block = document.querySelector('.books_block');
+let btn_delete_book = document.querySelector('.delete_book');
+let btn_edit_book = document.querySelector('.edit_book');
 
 if (currentUrl.includes('home.html')) {
     getBooks();
@@ -40,6 +42,8 @@ if (currentUrl.includes('home.html')) {
 }
 
 function getBooks(page = 1, pagination = true) {
+    if (document.querySelector('.booksHeader'))
+        document.querySelector('.booksHeader').remove();
     books_block.innerHTML += ('<h2 class="booksHeader">Our Books</h2>');
     let link = 'http://localhost:8113';
     let linkBooks = link + '/items?_page=' + page + '&_per_page=20';
@@ -106,6 +110,14 @@ function show_books(books, pagination = true, response) {
 
                         books_block.innerHTML = doc.querySelector('.single_book').outerHTML;
 
+                        btn_delete_book = document.querySelector('.delete_book');
+                        btn_edit_book = document.querySelector('.edit_book');
+
+                        btn_delete_book.dataset.id = bookId;
+                        btn_edit_book.dataset.id = bookId;
+
+                        btn_delete_book.addEventListener('click', delete_book)
+                        btn_edit_book.addEventListener('click', edit_book)
                     });
             });
 
@@ -155,14 +167,87 @@ function get_pagination(response) {
     return pagination;
 }
 
-// Функция для привязки обработчика к кнопке поиска
+function delete_book() {
+    let bookId = this.dataset.id;
+    axios.delete('http://localhost:8113/items/' + bookId).then(function (response) {
+        getBooks();
+    });
+}
+
+function edit_book() {
+    let bookId = this.dataset.id;
+    axios.get('http://localhost:8113/items/' + bookId).then(function (response) {
+        let book = response.data;
+        console.log(response);
+        let modal = document.createElement('div');
+        modal.classList.add('modal_edit_book');
+        modal.innerHTML = `
+        <div class='edit_container form_book'>
+            <form action="" id="edit_book_form">
+                <input type="text" name="img_url_form" placeholder="Please enter image URL" required>
+                <input type="text" name="title_book_form" placeholder="Please enter Book title" required>
+                <input type="text" name="authors_book_form" placeholder="Please enter authors" required>
+                <input type="text" name="book_published_form" placeholder="Please enter date of book published"
+                    required>
+                <input type="text" name="book_isbn_form" placeholder="Please enter ISBN" required>
+                <input type="text" name="book_page_count_form" placeholder="Please enter pages of book" required>
+                <input type="text" name="book_publisher_form" placeholder="Please enter name of publisher" required>
+                <input type="text" name="book_language_form" placeholder="Please enter language of book" required>
+                <textarea name="book_description_form" placeholder="Please enter description of book" required></textarea>
+                <button type="submit">Create book</button>
+            </form>
+        </div>`;
+
+        let img_url_form = modal.querySelector('input[name="img_url_form"]')
+        let title_book_form = modal.querySelector('input[name="title_book_form"]')
+        let authors_book_form = modal.querySelector('input[name="authors_book_form"]')
+        let book_published_form = modal.querySelector('input[name="book_published_form"]')
+        let book_isbn_form = modal.querySelector('input[name="book_isbn_form"]')
+        let book_page_count_form = modal.querySelector('input[name="book_page_count_form"]')
+        let book_publisher_form = modal.querySelector('input[name="book_publisher_form"]')
+        let book_language_form = modal.querySelector('input[name="book_language_form"]')
+        let book_description_form = modal.querySelector('textarea[name="book_description_form"]')
+
+
+        let titleJson = book.volumeInfo.title;
+        let imageJson = book.volumeInfo.imageLinks.thumbnail;
+        let autorsJson = book.volumeInfo.authors.join(', ');
+        let date = new Date(book.volumeInfo.publishedDate);
+        console.log(titleJson);
+        let year_bookJson = date.getFullYear();
+        let desc_bookJson = book.volumeInfo.description;
+        let ISBNJson = book.volumeInfo.industryIdentifiers[0].identifier;
+        let book_page_countJSON = book.volumeInfo.pageCount;
+        let book_publisherJSON = book.volumeInfo.publisher;
+        let book_languageJSON = book.volumeInfo.language;
+
+        img_url_form.value = imageJson;
+        title_book_form.value = titleJson;
+        authors_book_form.value = autorsJson;
+        book_published_form.value = year_bookJson;
+        book_isbn_form.value = ISBNJson;
+        book_page_count_form.value = book_page_countJSON;
+        book_publisher_form.value = book_publisherJSON;
+        book_language_form.value = book_languageJSON;
+        book_description_form.value = desc_bookJson;
+
+        //let form = document.querySelector('#edit_book_form');
+
+        //form.addEventListener('submit', async function (e) { });
+
+
+        document.querySelector('#content').appendChild(modal);
+    });
+    console.log("edit_book");
+}
+
 let searchHandlerAttached = false;
 function attachSearchHandler() {
     if (searchHandlerAttached) return;
     let btn_search = document.getElementsByClassName('btn_search')[0];
     if (btn_search) {
         btn_search.addEventListener('click', async function () {
-            let search_input = document.querySelector('.search_input').value.toLowerCase(); // Приводим ввод к нижнему регистру
+            let search_input = document.querySelector('.search_input').value.toLowerCase();
 
             let count_books = 0;
             let arr_books = [];
@@ -176,35 +261,34 @@ function attachSearchHandler() {
                     let books = resBook.data.data;
                     console.log(resBook);
 
-                    // Проверка, является ли books массивом
                     if (Array.isArray(books)) {
                         if (books.length === 0) {
-                            flag = false; // Прекращаем поиск, если больше нет данных
+                            flag = false;
                             break;
                         }
 
                         let newItemsFound = false;
                         for (let item of books) {
-                            if (!seenItems.has(item.id) && item.volumeInfo.title.toLowerCase().includes(search_input)) { // Приводим title к нижнему регистру
+                            if (!seenItems.has(item.id) && item.volumeInfo.title.toLowerCase().includes(search_input)) {
                                 arr_books.push(item);
                                 seenItems.add(item.id);
                                 console.log(item.volumeInfo.title);
                                 count_books++;
                                 newItemsFound = true;
                                 if (count_books >= 20) {
-                                    flag = false; // Прекращаем поиск, если нашли 20 книг
+                                    flag = false;
                                     break;
                                 }
                             }
                         }
 
                         if (!newItemsFound) {
-                            flag = false; // Прекращаем цикл, если нет новых элементов
+                            flag = false;
                         }
                         page++;
                     } else {
                         console.error('Expected an array but got:', books);
-                        flag = false; // Прекращаем цикл, если формат данных неправильный
+                        flag = false;
                     }
                 } catch (error) {
                     flag = false;
@@ -213,7 +297,7 @@ function attachSearchHandler() {
             }
             books_block.innerHTML = '';
             show_books(arr_books, false);
-            // Можно добавить вывод результатов поиска или дальнейшую обработку
+
             console.log('Found books:', arr_books);
         });
         console.log("Handler attached to btn_search");

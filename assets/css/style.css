@@ -332,6 +332,96 @@ div#pagination button {
     display: none;
 }
 
+.single_book {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.single_book .main_book_content {
+    margin: 0;
+    max-width: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.description_book {
+    padding: 0;
+    max-width: none;
+}
+
+.additional_details {
+    width: auto;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    /* padding-block: 40px; */
+}
+
+.additionl_book_content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.single_book {
+    /* padding: 0; */
+    /* max-width: none; */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-block: 40px;
+}
+
+.buttons_wrapper {
+    padding: 0;
+    text-align: left;
+}
+
+.buttons_wrapper button {
+    width: unset;
+    height: unset;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.single_book .content_book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.single_book h2.title_book {
+    margin: 5px;
+}
+
+.single_book .content_book {
+    margin-block: 5px;
+}
+
+.modal_edit_book {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #00000061;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit_container {
+    display: flex;
+    max-width: 70%;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
