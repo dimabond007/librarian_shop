@@ -76,83 +76,6 @@
     },
     {
       "kind": "books#volume",
-      "id": "iNSBDwAAQBAJ",
-      "etag": "teyZOUdGnvE",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/iNSBDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Adventure and Society",
-        "authors": [
-          "Simon Beames",
-          "Chris Mackie",
-          "Matthew Atencio"
-        ],
-        "publisher": "Springer",
-        "publishedDate": "2018-12-28",
-        "description": "This undergraduate textbook provides a broad overview of the ways in which ‘adventurous practices’ influence, and are influenced by, the world around them. The concept of adventure is one that is too often tackled within subject silos of philosophy, education, tourism, or leisure. While much of the analysis is strong, there is little cross-pollination between disciplines. Adventure & Society pulls together the threads of these discourses into one coherent treatment of the term ‘adventure’ and the role that it plays in human social life of the 21st century. It explores how these practices can be considered more deeply through theoretical discourses of capitalism, identity construction, technology and social media, risk-taking, personal development, equalities, and sustainability. As such, the book speaks to a broad audience of undergraduate and postgraduate students across diverse subject areas, and aims to be an accessible starting point for deeper inquiry.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9783319960623"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "3319960628"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 201,
-        "printType": "BOOK",
-        "categories": [
-          "Sports & Recreation"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "3.6.6.0.preview.3",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=iNSBDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=iNSBDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=iNSBDwAAQBAJ&printsec=frontcover&dq=adventure&hl=&cd=3&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=iNSBDwAAQBAJ&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Adventure_and_Society.html?hl=&id=iNSBDwAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "IL",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "IL",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/Adventure_and_Society-sample-epub.acsm?id=iNSBDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/Adventure_and_Society-sample-pdf.acsm?id=iNSBDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=iNSBDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "As such, the book speaks to a broad audience of undergraduate and postgraduate students across diverse subject areas, and aims to be an accessible starting point for deeper inquiry. ‘Beames, Mackie and Atencio expertly crystallize the ..."
-      }
-    },
-    {
-      "kind": "books#volume",
       "id": "Yq4yDwAAQBAJ",
       "etag": "X2PzTjnyDE8",
       "selfLink": "https://www.googleapis.com/books/v1/volumes/Yq4yDwAAQBAJ",
@@ -299,158 +222,6 @@
       },
       "searchInfo": {
         "textSnippet": "... <b>adventures</b> McMinnville, OR — Author Wave Joann Stevens treats young readers and fantasy—lovers as she releases, through Xlibris, a rich collection of exciting tales carved out of her imaginative mind. Mystery, <b>Adventure</b> @Nonsense: True&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "N1oRCgAAQBAJ",
-      "etag": "ciAFoN7gHYQ",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/N1oRCgAAQBAJ",
-      "volumeInfo": {
-        "title": "The Adventure of Being Human II: Mother Spirit Speaks",
-        "subtitle": "More Lessons on Soulful Living from the Heart of the Urantia Revelation",
-        "authors": [
-          "Jerry Lane"
-        ],
-        "publisher": "Red Wheel/Weiser",
-        "publishedDate": "2015-03-01",
-        "description": "The central deity-personalities of the Urantia Revelation are humanity's spiritual parents—Christ Michael (or Jesus) and his coequal partner, Mother Spirit. In this sequel to The Adventure of Being Human: Lessons on Soulful Living from the Heart of the Urantia Revelation, the focus is exclusively on Mother Spirit—the all-loving, omnipresent mother of us all. She is the reality behind all of the cherished notions of a divine mother throughout human history as well as the majestic source of the Holy Spirit, and of life itself. In this charming guide you will learn all about her and discover how she regards the unique challenges of being human. She will explain why our lives on this complex and sometimes dangerous planet offer an ideal setting for our adventures of soul growth. This book provides a selection of Mother Spirit's teachings from her many years of \"live\" transmission sessions, along with rich supporting materials. Her unprecedented and delightful instructions on the art of soulful living are more accessible than ever before.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9781579830267"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1579830269"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 170,
-        "printType": "BOOK",
-        "categories": [
-          "Religion"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.4.4.0.preview.3",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=N1oRCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=N1oRCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=N1oRCgAAQBAJ&pg=PT15&dq=adventure&hl=&cd=8&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=N1oRCgAAQBAJ&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/The_Adventure_of_Being_Human_II_Mother_S.html?hl=&id=N1oRCgAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "IL",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "IL",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/The_Adventure_of_Being_Human_II_Mother_S-sample-epub.acsm?id=N1oRCgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/The_Adventure_of_Being_Human_II_Mother_S-sample-pdf.acsm?id=N1oRCgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=N1oRCgAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... <b>adventure</b> of being human on this planet. ese selected lessons are presented by our spiritual parents, and in this volume we feature our Mother Spirit. She and her divine consort, Christ Michael, are introduced in the Publisher&#39;s&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "3_-hDQAAQBAJ",
-      "etag": "R3Zzp0+vsVc",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/3_-hDQAAQBAJ",
-      "volumeInfo": {
-        "title": "A Bear Grylls Adventure 4: The Sea Challenge",
-        "subtitle": "by bestselling author and Chief Scout Bear Grylls",
-        "authors": [
-          "Bear Grylls"
-        ],
-        "publisher": "Bonnier Publishing Fiction Ltd.",
-        "publishedDate": "2017-06-15",
-        "description": "The fourth in the fun new 12-book collectible series for young readers from survival expert and Chief Scout BEAR GRYLLS. Chloe is enjoying activity camp and all the outdoor fun - what's not to like? But she can't understand why everyone goes on and on about \"leaving things the way you found them\". After all, what's the big deal about a bit of litter in the middle of the woods? The world is big enough for a bit of rubbish not to matter. But when she's given a mysterious compass with a fifth direction she's transported to a tropical island beach and has to brave the extreme conditions with the help of survival expert Bear Grylls. It's not like a typical trip to the seaside! First there's a shipwreck to escape through raging surf, fresh water to source, not to mention quicksand and sea urchins... Will Bear persuade her to change her ways when she sees how much non-degradable litter still washes up, and the damage it does to wildlife? And who will get the compass next? Each book in this fun new 12-book series from BEAR GRYLLS follows a different child on the outdoor activity camp. Once they are given the magical compass, they meet the inspirational adventurer in an amazing place and learn new skills and facts they can take with them back to their real life.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9781786960214"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1786960214"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 64,
-        "printType": "BOOK",
-        "categories": [
-          "Juvenile Fiction"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.3.0.preview.3",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=3_-hDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=3_-hDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=3_-hDQAAQBAJ&pg=PT59&dq=adventure&hl=&cd=9&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=3_-hDQAAQBAJ&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/A_Bear_Grylls_Adventure_4_The_Sea_Challe.html?hl=&id=3_-hDQAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "IL",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "IL",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/A_Bear_Grylls_Adventure_4_The_Sea_Challe-sample-epub.acsm?id=3_-hDQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/A_Bear_Grylls_Adventure_4_The_Sea_Challe-sample-pdf.acsm?id=3_-hDQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=3_-hDQAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... <b>adventure</b> at a young age from his father, a former Royal Marine. After school, Bear joined the Reserve SAS, then went on to become one of the youngest ever people to climb Mount Everest, just two years after breaking his back in three&nbsp;..."
       }
     },
     {
@@ -35824,6 +35595,39 @@
         "publisher": "weqr",
         "language": "ewrt"
       }
+    }
+  ],
+  "operations": [],
+  "favorites": [
+    {
+      "id": "055d",
+      "imgUrl": "http://books.google.com/books/content?id=jkNBAAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "The Glorious Adventure",
+      "bookId": "jkNBAAAAIAAJ"
+    },
+    {
+      "id": "5b95",
+      "imgUrl": "http://books.google.com/books/content?id=ebRczgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "title": "The Life and Adventures of Robinson Crusoe by Daniel Defoe",
+      "bookId": "ebRczgEACAAJ"
+    },
+    {
+      "id": "d45f",
+      "imgUrl": "http://books.google.com/books/content?id=6nMb-W9poboC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "An Adventure in Fairyland",
+      "bookId": "6nMb-W9poboC"
+    },
+    {
+      "id": "7906",
+      "imgUrl": "http://books.google.com/books/content?id=xtnRCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "The Hollywood Action and Adventure Film",
+      "bookId": "xtnRCQAAQBAJ"
+    },
+    {
+      "id": "1f9e",
+      "imgUrl": "http://books.google.com/books/content?id=6SAcDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "title": "The Adventure of the Copper Beeches",
+      "bookId": "6SAcDQAAQBAJ"
     }
   ]
 }

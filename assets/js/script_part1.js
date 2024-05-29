@@ -6,6 +6,7 @@ let btn_edit_book = document.querySelector('.edit_book');
 if (currentUrl.includes('home.html')) {
     getBooks();
 } else if (currentUrl.includes('form_book.html')) {
+    v
     let form_create = document.querySelector('#create_book_form');
     form_create.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -39,6 +40,8 @@ if (currentUrl.includes('home.html')) {
         });
 
     });
+} else if (currentUrl.includes('favorites.html')) {
+    showOnFavPage();
 }
 
 function getBooks(page = 1, pagination = true) {
@@ -112,12 +115,25 @@ function show_books(books, pagination = true, response) {
 
                         btn_delete_book = document.querySelector('.delete_book');
                         btn_edit_book = document.querySelector('.edit_book');
+                        let addToFavoriteButton = document.querySelector(".add_book_To_Favorite")
+
+                        axios.get('http://localhost:8113/favorites?bookId=' + bookId)
+                            .then(function (response) {
+                                if (response.data !== undefined && response.data.length !== 0) {
+
+                                    addToFavoriteButton.classList.add('red');
+
+                                }
+                            });
+
 
                         btn_delete_book.dataset.id = bookId;
+                        addToFavoriteButton.dataset.id = bookId;
                         btn_edit_book.dataset.id = bookId;
 
                         btn_delete_book.addEventListener('click', delete_book)
                         btn_edit_book.addEventListener('click', edit_book)
+                        addToFavoriteButton.addEventListener("click", addBookToFavorite);
                     });
             });
 
@@ -165,6 +181,119 @@ function get_pagination(response) {
         pagination.appendChild(btn);
     }
     return pagination;
+}
+
+
+
+
+function addBookToFavorite(e) {
+    let imageUrl = document.querySelector('.img_book img').src;
+    let bookTitle = document.querySelector('.title_book').innerHTML;
+    let bookId = this.dataset.id
+    axios.get('http://localhost:8113/favorites?bookId=' + bookId)
+        .then(function (response) {
+            if (response.data === undefined || response.data.length == 0) {
+                axios.post('http://localhost:8113/favorites', { "imgUrl": imageUrl, "title": bookTitle, "bookId": bookId })
+                    .then(function (response) {
+                        console.log('Book added to favorites:', response.data);
+                        let FavoriteButton = document.querySelector('.add_book_To_Favorite')
+                        FavoriteButton.classList.add('remove_book_From_Favorite');
+
+                        alert('Book added to favorites!');
+                    })
+                    .catch(function (error) {
+                        console.error('Error adding book to favorites:', error);
+                        alert('Failed to add book to favorites.');
+                    });
+            } else {
+                axios.delete('http://localhost:8113/favorites/' + response.data[0].id).then(function (response) {
+                    getBooks();
+                });
+
+            }
+            console.log(response.data);
+            alert('Book added to favorites!');
+        })
+        .catch(function (error) {
+            console.error('Error adding book to favorites:', error);
+            alert('Failed to add book to favorites.');
+        });
+    fetch(link)
+        .then(res => res.text())
+        .then(function (res) {
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(res, 'text/html');
+
+            let titleBook = doc.querySelector('.title_book');
+            let imageBook = doc.querySelector('.img_book img');
+            let authors = doc.querySelector('.authors_book');
+            let year_book = doc.querySelector('.year_book');
+            let description_book = doc.querySelector('.description_book');
+            let book_isbn = doc.querySelector('.book_isbn').lastChild;
+            let book_page_count = doc.querySelector('.book_page_count').lastChild;
+            let book_published = doc.querySelector('.book_published').lastChild;
+            let book_publisher = doc.querySelector('.book_publisher').lastChild;
+            let book_language = doc.querySelector('.book_language').lastChild;
+            let book_author = doc.querySelector('.book_author').lastChild;
+
+            titleBook.innerHTML = titleJson;
+            imageBook.src = imageJson;
+            authors.innerHTML = 'By ' + autorsJson;
+            year_book.innerHTML = year_bookJson;
+            description_book.innerHTML = desc_bookJson;
+            book_isbn.innerHTML = ISBNJson;
+            book_page_count.innerHTML = book_page_countJSON;
+            book_published.innerHTML = book_publishedJSON;
+            book_publisher.innerHTML = book_publisherJSON;
+            book_language.innerHTML = book_languageJSON;
+            book_author.innerHTML = autorsJson;
+
+            books_block.innerHTML = doc.querySelector('.single_book').outerHTML;
+
+            btn_delete_book = document.querySelector('.delete_book');
+            btn_edit_book = document.querySelector('.edit_book');
+            let addToFavoriteButton = document.querySelector(".add_book_To_Favorite")
+
+
+            btn_delete_book.dataset.id = bookId;
+            addToFavoriteButton.dataset.id = bookId;
+            btn_edit_book.dataset.id = bookId;
+
+            btn_delete_book.addEventListener('click', delete_book)
+            btn_edit_book.addEventListener('click', edit_book)
+            addToFavoriteButton.addEventListener("click", addBookToFavorite);
+        });
+
+
+
+}
+
+function showOnFavPage() {
+
+    axios.get('http://localhost:8113/favorites').then(function (response) {
+
+
+        let books_container = document.createElement('div');
+        books_container.id = 'books_container';
+        for (let book of response.data) {
+
+            let newBook = document.createElement('div');
+            newBook.className = 'EachFavorite';
+            newBook.innerHTML = `
+            <img src="${book.imgUrl}" class="favoritesImg">
+            <h2 class="bookTitle">${book.title}</h2>
+            <button class="add_to_favorites red" data-id=${book.bookId}><i class="fa-solid fa-heart"></i></button>
+
+        `;
+
+            books_container.appendChild(newBook);
+        }
+
+        let allFavorites = document.querySelector('.allFavorites');
+        allFavorites.appendChild(books_container);
+
+
+    });
 }
 
 function delete_book() {
@@ -240,10 +369,16 @@ function edit_book() {
     });
     console.log("edit_book");
 }
-
+function navigateToPage() {
+    var dropdown = document.getElementById("navbar-dropdown");
+    var selectedValue = dropdown.value;
+    window.location.href = selectedValue;
+}
 let searchHandlerAttached = false;
 function attachSearchHandler() {
     if (searchHandlerAttached) return;
+    let navSelect = document.querySelector("#navbar-dropdown");
+    navSelect.addEventListener("change", navigateToPage)
     let btn_search = document.getElementsByClassName('btn_search')[0];
     if (btn_search) {
         btn_search.addEventListener('click', async function () {

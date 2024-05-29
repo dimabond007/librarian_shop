@@ -541,6 +541,72 @@ div#pagination button {
     border-radius: 10px;
 }
 
+
+/* Favorites Page*/
+.favoritesH2 {
+    text-align: center;
+    justify-content: center;
+    margin: 60px auto 15px auto;
+    max-width: 800px;
+    color: #4a90e2;
+    font-size: 45px;
+}
+
+
+.EachFavorite {
+    text-align: center;
+    width: 200px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 8px 2px rgba(0, 0, 0, 0.15);
+}
+
+.favoritesImg {
+    width: 150px;
+    border-radius: 15px;
+}
+
+.bookTitle {
+    font-size: 20px;
+    margin: auto;
+}
+
+.add_to_favorites {
+    justify-content: center;
+    margin: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: large;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+.remove_book_From_Favorite {
+    margin: auto;
+    justify-content: center;
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: large;
+    background-color: #3498db;
+    color: red;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+
+
+.red {
+    color: red !important;
+    border: 1px solid black;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

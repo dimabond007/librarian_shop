@@ -12,13 +12,13 @@
             <li><a href="./home.html">Home</a></li>
             <li><a href="./form_book.html">Create</a></li>
             <li><a href="./history.html">History</a></li>
-            <li><a href="./history.html">Favorites</a></li>
+            <li><a href="./favorites.html">Favorites</a></li>
         </ul>
-        <select id="navbar-dropdown" class="navbar-dropdown">
-            <option value="">History</option>
-            <option value="#home">Home</option>
+        <select id="navbar-dropdown" class="navbar-dropdown" onchange="navigateToPage()">
+            <option value="./home.html">Home</option>
             <option value="./form_book.html">Create</option>
-
+            <option value="./history.html">History</option>
+            <option value="./favorites.html">Favorites</option>
         </select>
     </nav>
 </div>
