@@ -6,48 +6,24 @@
       "etag": "5L79X1B8484",
       "selfLink": "https://www.googleapis.com/books/v1/volumes/AgFMEAAAQBAJ",
       "volumeInfo": {
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=AgFMEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
         "title": "Adventure",
         "authors": [
-          "Jack London",
-          "Sheba Blake"
+          "Jack London, Sheba Blake"
         ],
-        "publisher": "Sheba Blake Publishing",
-        "publishedDate": "2021-11-15",
+        "publishedDate": "2021",
         "description": "Though novelist Jack London is best known for the paean to natural wonder that is The Call of the Wild, he had an activist side, as well. In Adventure, London describes and skewers the plantation system of The Solomon Islands in a devastating take-down that is equal parts adventure tale and social justice tract.",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
             "identifier": "9783986776381"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "3986776389"
           }
         ],
-        "readingModes": {
-          "text": true,
-          "image": false
-        },
-        "pageCount": 279,
-        "printType": "BOOK",
-        "categories": [
-          "Fiction"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.4.4.0.preview.2",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=AgFMEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=AgFMEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=AgFMEAAAQBAJ&dq=adventure&hl=&cd=1&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=AgFMEAAAQBAJ&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Adventure.html?hl=&id=AgFMEAAAQBAJ"
+        "pageCount": "279",
+        "publisher": "Sheba Blake Publishing",
+        "language": "en"
       },
       "saleInfo": {
         "country": "IL",
@@ -447,135 +423,27 @@
       }
     },
     {
-      "kind": "books#volume",
-      "id": "6nMb-W9poboC",
-      "etag": "eCO/J9QXjTU",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/6nMb-W9poboC",
       "volumeInfo": {
-        "title": "An Adventure in Fairyland",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=6nMb-W9poboC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "title": "An Adventure in Fairyland 1",
         "authors": [
           "Joy Bloumis"
         ],
-        "publisher": "Strategic Book Publishing",
         "publishedDate": "2013",
         "description": "Twins Peter and Samantha, who likes to be called Sammi, have just moved into their new house and are amazed to find a door in the large maple tree at the bottom of their garden. On entering the door, they find an underground river and a mouse in a dingy who has been instructed to row them to Fairyland, beginning An Adventure in Fairyland. There they are asked to help regain the fairy queen's wand that has been stolen by the magician Malicio. To help them retrieve the wand in safety, the queen gives them a potion that makes them invisible to everyone but each other. On their adventure, they meet a host of magic characters and are also able to rescue a pixie and a gnome, two prisoners of Malicio. As a reward, the queen gives the twins a magic stone that will enable them to return to Fairyland in the future. What other adventures await the twins?",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
             "identifier": "9781622128358"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1622128354"
           }
         ],
-        "readingModes": {
-          "text": false,
-          "image": false
-        },
-        "pageCount": 85,
-        "printType": "BOOK",
-        "categories": [
-          "Fiction"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.1.1.0.preview.0",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=6nMb-W9poboC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=6nMb-W9poboC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=6nMb-W9poboC&printsec=frontcover&dq=adventure&hl=&cd=13&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=6nMb-W9poboC&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/An_Adventure_in_Fairyland.html?hl=&id=6nMb-W9poboC"
+        "pageCount": "85",
+        "publisher": "Strategic Book Publishing",
+        "language": "en"
       },
-      "saleInfo": {
-        "country": "IL",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "IL",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=6nMb-W9poboC&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "On entering the door, they find an underground river and a mouse in a dingy who has been instructed to row them to Fairyland, beginning An Adventure in Fairyland."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "4gr3twEACAAJ",
-      "etag": "XzoDAsA1S8M",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/4gr3twEACAAJ",
-      "volumeInfo": {
-        "title": "She",
-        "subtitle": "A History of Adventure",
-        "authors": [
-          "Sir Henry Rider Haggard"
-        ],
-        "publishedDate": "1891",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "OCLC:933779813"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": false
-        },
-        "pageCount": 277,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "preview-1.0.0",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=4gr3twEACAAJ&dq=adventure&hl=&cd=14&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=4gr3twEACAAJ&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/She.html?hl=&id=4gr3twEACAAJ"
-      },
-      "saleInfo": {
-        "country": "IL",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "IL",
-        "viewability": "NO_PAGES",
-        "embeddable": false,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=4gr3twEACAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "NONE",
-        "quoteSharingAllowed": false
-      }
+      "id": "6nMb-W9poboC"
     },
     {
       "kind": "books#volume",
@@ -728,78 +596,27 @@
       }
     },
     {
-      "kind": "books#volume",
-      "id": "tigqEAAAQBAJ",
-      "etag": "7AzomMNSz4Q",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/tigqEAAAQBAJ",
       "volumeInfo": {
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=tigqEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
         "title": "The Adventures of Tom Sawyer",
         "authors": [
           "Mark Twain"
         ],
-        "publisher": "Diamond Pocket Books Pvt Ltd",
-        "publishedDate": "2021-04-19",
+        "publishedDate": "2021",
         "description": "Mark Twain, the author was an American Writer & Humorist. His Original name is “Samuel Longhorne Clemens”. Mark Twain is the pen name. His notable works are “The Adventures of Tom Sawyer” & “Adventures of Huckleberry Finn”. In his credit, there are 28 books and numerous Sketches & Short stories. ‘The Adventures of Tom Sawyer’ came out in 1869. It features one of the best-loved characters in American fiction. Mark Twain’s famous short stories are: ‘The War Prayer’, ‘A Dog’s Tale’, ‘Eve’s Diary’, ‘A Ghost Story’, ‘Luck’, ‘Advice to little Girls’, ‘Cannibalism in the Cars’, and lot many… This novel is about a boy growing up along the Mississippi River. Tom Sawyer has several adventures, after with his friend Huckleberry Finn. An Excerpt: “Tom falls in love with Becky Thatcher, a new girl in town wins the admiration of the judge in the church by obtaining the Bible as a prize but reveals his ignorance when he is unable to answer basic questions about Scripture. Tom pursues Becky, eventually persuading her to get engaged by kissing him. Their romance soon collapses when she discovers that Tom was engaged to another school girl…” The book has been widely adapted into feature films and Television Series. A must-have book for everyone.",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
             "identifier": "9789390960729"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "939096072X"
           }
         ],
-        "readingModes": {
-          "text": true,
-          "image": false
-        },
-        "pageCount": 248,
-        "printType": "BOOK",
-        "categories": [
-          "Fiction"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.1.1.0.preview.2",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=tigqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=tigqEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com/books?id=tigqEAAAQBAJ&printsec=frontcover&dq=adventure&hl=&cd=17&source=gbs_api",
-        "infoLink": "http://books.google.com/books?id=tigqEAAAQBAJ&dq=adventure&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/The_Adventures_of_Tom_Sawyer.html?hl=&id=tigqEAAAQBAJ"
+        "pageCount": "248",
+        "publisher": "Diamond Pocket Books Pvt Ltd",
+        "language": "rus"
       },
-      "saleInfo": {
-        "country": "IL",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "IL",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com/books/download/The_Adventures_of_Tom_Sawyer-sample-epub.acsm?id=tigqEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=tigqEAAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "Mark Twain’s famous short stories are: ‘The War Prayer’, ‘A Dog’s Tale’, ‘Eve’s Diary’, ‘A Ghost Story’, ‘Luck’, ‘Advice to little Girls’, ‘Cannibalism in the Cars’, and lot many… This novel is about a ..."
-      }
+      "id": "tigqEAAAQBAJ"
     },
     {
       "kind": "books#volume",

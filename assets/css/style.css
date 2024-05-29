@@ -178,9 +178,14 @@ footer {
 
 
 .books_block .book {
-    padding: 20px;
     flex: 1 0 15%;
-    max-width: 17%;
+    margin: 15px;
+    min-width: 140px;
+    max-width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .books_block img {
@@ -197,11 +202,12 @@ div#content.books_block #books_container {
     padding-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
+    justify-content: space-between;
 }
 
 
 div#pagination {
-    width: 750px;
+    max-width: 750px;
     margin: auto;
     margin-bottom: 15px;
     text-align: center;
@@ -343,6 +349,10 @@ div#pagination button {
 
 #create_book_form {
     margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
 }
 
 .createInputs {
@@ -376,6 +386,53 @@ div#pagination button {
     border: 1px solid;
     border-radius: 15px;
 }
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.table_history {
+    margin-block: 50px;
+}
+
+.authors_year {
+    display: flex;
+    gap: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    color: #555;
+}
+
 
 
 /* Keyframes for bounce animation */
@@ -539,6 +596,17 @@ div#pagination button {
     align-items: center;
     background: white;
     border-radius: 10px;
+    position: relative;
+}
+
+button.close_modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -619,9 +687,9 @@ div#pagination button {
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: row;
-        align-items: stretch;
         gap: 14px;
+        padding: 0;
+        flex-direction: column;
     }
 
 

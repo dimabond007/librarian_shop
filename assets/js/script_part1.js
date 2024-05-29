@@ -8,36 +8,45 @@ if (currentUrl.includes('home.html')) {
 } else if (currentUrl.includes('form_book.html')) {
     v
     let form_create = document.querySelector('#create_book_form');
-    form_create.addEventListener('submit', function (e) {
-        e.preventDefault();
-        let image_url = document.querySelector('input[name="img_url_form"]').value;
-        let title_book = document.querySelector('input[name="title_book_form"]').value;
-        let authors_book = document.querySelector('input[name="authors_book_form"]').value;
-        let book_published = document.querySelector('input[name="book_published_form"]').value;
-        let book_isbn = document.querySelector('input[name="book_isbn_form"]').value;
-        let book_page_count = document.querySelector('input[name="book_page_count_form"]').value;
-        let book_publisher = document.querySelector('input[name="book_publisher_form"]').value;
-        let book_language = document.querySelector('input[name="book_language_form"]').value;
+    form_create.addEventListener('submit', createBook);
+} else if (currentUrl.includes('history.html')) {
+    getHistory()
+}
 
-        axios.post('http://localhost:8113/items', {
-            'volumeInfo': {
-                'imageLinks': {
-                    'thumbnail': image_url
-                },
-                'title': title_book,
-                'authors': [authors_book],
-                'publishedDate': book_published,
-                'industryIdentifiers': [
-                    {
-                        'type': 'ISBN_13',
-                        'identifier': book_isbn
-                    }
-                ],
-                'pageCount': book_page_count,
-                'publisher': book_publisher,
-                'language': book_language
-            }
-        });
+function createBook(e) {
+    e.preventDefault();
+    let image_url = document.querySelector('input[name="img_url_form"]').value;
+    let title_book = document.querySelector('input[name="title_book_form"]').value;
+    let authors_book = document.querySelector('input[name="authors_book_form"]').value;
+    let book_published = document.querySelector('input[name="book_published_form"]').value;
+    let book_isbn = document.querySelector('input[name="book_isbn_form"]').value;
+    let book_page_count = document.querySelector('input[name="book_page_count_form"]').value;
+    let book_publisher = document.querySelector('input[name="book_publisher_form"]').value;
+    let book_language = document.querySelector('input[name="book_language_form"]').value;
+    let book_description = document.querySelector('textarea[name="book_description_form"]').value;
+
+
+    axios.post('http://localhost:8113/items', {
+        'volumeInfo': {
+            'imageLinks': {
+                'thumbnail': image_url
+            },
+            'title': title_book,
+            'authors': [authors_book],
+            'publishedDate': book_published,
+            'description': book_description,
+            'industryIdentifiers': [
+                {
+                    'type': 'ISBN_13',
+                    'identifier': book_isbn
+                }
+            ],
+            'pageCount': book_page_count,
+            'publisher': book_publisher,
+            'language': book_language
+        }
+    }).then(function (result) {
+        addLog(result.data.id, 'CREATE', Date.now());
 
     });
 } else if (currentUrl.includes('favorites.html')) {
@@ -68,17 +77,17 @@ function show_books(books, pagination = true, response) {
             axios.get('http://localhost:8113/items/' + bookId).then(function (resBook) {
 
                 let titleJson = resBook.data.volumeInfo.title;
-                let imageJson = resBook.data.volumeInfo.imageLinks.thumbnail;
-                let autorsJson = resBook.data.volumeInfo.authors.join(', ');
+                let imageJson = resBook.data.volumeInfo.imageLinks ? resBook.data.volumeInfo.imageLinks.thumbnail : '../assets/images/no_image.jpg';
+                let autorsJson = resBook.data.volumeInfo.authors ? resBook.data.volumeInfo.authors.join(', ') : 'World';
                 let date = new Date(resBook.data.volumeInfo.publishedDate);
 
                 let year_bookJson = date.getFullYear();
-                let desc_bookJson = resBook.data.volumeInfo.description;
-                let ISBNJson = resBook.data.volumeInfo.industryIdentifiers[0].identifier;
+                let desc_bookJson = resBook.data.volumeInfo.description ? resBook.data.volumeInfo.description : "None";
+                let ISBNJson = resBook.data.volumeInfo.industryIdentifiers ? resBook.data.volumeInfo.industryIdentifiers[0].identifier : 'None';
                 let book_page_countJSON = resBook.data.volumeInfo.pageCount;
                 let book_publishedJSON = date.getUTCDate();
-                let book_publisherJSON = resBook.data.volumeInfo.publisher;
-                let book_languageJSON = resBook.data.volumeInfo.language;
+                let book_publisherJSON = resBook.data.volumeInfo.publisher ? resBook.data.volumeInfo.publisher : "None";
+                let book_languageJSON = resBook.data.volumeInfo.language ? resBook.data.volumeInfo.language : null;
 
                 let link = '../templates/single.html';
                 fetch(link)
@@ -181,6 +190,15 @@ function get_pagination(response) {
         pagination.appendChild(btn);
     }
     return pagination;
+}
+
+function addLog(book_id, operation, time) {
+    let link = 'http://localhost:8113/oparations';
+    axios.post(link, {
+        'id_book': book_id,
+        'name': operation,
+        'time': time
+    });
 }
 
 
@@ -299,6 +317,7 @@ function showOnFavPage() {
 function delete_book() {
     let bookId = this.dataset.id;
     axios.delete('http://localhost:8113/items/' + bookId).then(function (response) {
+        addLog(bookId, "DELETE", Date.now())
         getBooks();
     });
 }
@@ -323,8 +342,9 @@ function edit_book() {
                 <input type="text" name="book_publisher_form" class="createInputs" placeholder="Please enter name of publisher" required>
                 <input type="text" name="book_language_form" class="createInputs" placeholder="Please enter language of book" required>
                 <textarea name="book_description_form" class="textarea" placeholder="Please enter description of book" required></textarea>
-                <button type="submit" class="createButton" >Create book</button>
+                <button type="submit" class="createButton" >Edit book</button>
             </form>
+            <button type="button" class="close_modal">X</button>
         </div>`;
 
         let img_url_form = modal.querySelector('input[name="img_url_form"]')
@@ -360,12 +380,52 @@ function edit_book() {
         book_language_form.value = book_languageJSON;
         book_description_form.value = desc_bookJson;
 
-        //let form = document.querySelector('#edit_book_form');
-
-        //form.addEventListener('submit', async function (e) { });
-
-
         document.querySelector('#content').appendChild(modal);
+        document.querySelector('.close_modal').addEventListener('click', function () {
+            document.querySelector('.modal_edit_book').remove();
+        });
+
+        let form_edit = document.querySelector('#edit_book_form');
+        form_edit.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let img_url_form = modal.querySelector('input[name="img_url_form"]').value
+            let title_book_form = modal.querySelector('input[name="title_book_form"]').value
+            let authors_book_form = modal.querySelector('input[name="authors_book_form"]').value
+            let book_published_form = modal.querySelector('input[name="book_published_form"]').value
+            let book_isbn_form = modal.querySelector('input[name="book_isbn_form"]').value
+            let book_page_count_form = modal.querySelector('input[name="book_page_count_form"]').value
+            let book_publisher_form = modal.querySelector('input[name="book_publisher_form"]').value
+            let book_language_form = modal.querySelector('input[name="book_language_form"]').value
+            let book_description_form = modal.querySelector('textarea[name="book_description_form"]').value
+
+
+            axios.patch('http://localhost:8113/items/' + bookId, {
+                'volumeInfo': {
+                    'imageLinks': {
+                        'thumbnail': img_url_form
+                    },
+                    'title': title_book_form,
+                    'authors': [authors_book_form],
+                    'publishedDate': book_published_form,
+                    'description': book_description_form,
+                    'industryIdentifiers': [
+                        {
+                            'type': 'ISBN_13',
+                            'identifier': book_isbn_form
+                        }
+                    ],
+                    'pageCount': book_page_count_form,
+                    'publisher': book_publisher_form,
+                    'language': book_language_form
+                }
+            }).then(function (response) {
+                console.log(response);
+                addLog(bookId, "EDIT", Date.now())
+
+                getBooks();
+            });
+        });
+
     });
     console.log("edit_book");
 }
@@ -374,6 +434,33 @@ function navigateToPage() {
     var selectedValue = dropdown.value;
     window.location.href = selectedValue;
 }
+function getHistory() {
+
+    axios.get('http://localhost:8113/oparations/').then(function (response) {
+        let history = response.data;
+        console.log(history);
+        let table = document.querySelector('.table_history table')
+        table.innerHTML = `
+        <tr>
+            <th>ID</th>
+            <th>Operation</th>
+            <th>Time</th>
+            <th>Book Id</th>
+        </tr>`;
+        history.forEach(function (item) {
+            let date = new Date(item.time)
+            table.innerHTML += `
+            <tr>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${date.toLocaleString('en-GB', { timeZone: 'UTC' })}</td>
+            <td>${item.id_book}</td>
+        </tr>
+            `
+        });
+    });
+}
+
 let searchHandlerAttached = false;
 function attachSearchHandler() {
     if (searchHandlerAttached) return;
