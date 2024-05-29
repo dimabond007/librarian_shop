@@ -184,17 +184,17 @@ function edit_book() {
         modal.innerHTML = `
         <div class='edit_container form_book'>
             <form action="" id="edit_book_form">
-                <input type="text" name="img_url_form" placeholder="Please enter image URL" required>
-                <input type="text" name="title_book_form" placeholder="Please enter Book title" required>
-                <input type="text" name="authors_book_form" placeholder="Please enter authors" required>
-                <input type="text" name="book_published_form" placeholder="Please enter date of book published"
+                <input type="text" name="img_url_form" class="createInputs" placeholder="Please enter image URL" required>
+                <input type="text" name="title_book_form" class="createInputs" placeholder="Please enter Book title" required>
+                <input type="text" name="authors_book_form" class="createInputs" placeholder="Please enter authors" required>
+                <input type="text" name="book_published_form" class="createInputs" placeholder="Please enter date of book published"
                     required>
-                <input type="text" name="book_isbn_form" placeholder="Please enter ISBN" required>
-                <input type="text" name="book_page_count_form" placeholder="Please enter pages of book" required>
-                <input type="text" name="book_publisher_form" placeholder="Please enter name of publisher" required>
-                <input type="text" name="book_language_form" placeholder="Please enter language of book" required>
-                <textarea name="book_description_form" placeholder="Please enter description of book" required></textarea>
-                <button type="submit">Create book</button>
+                <input type="text" name="book_isbn_form" class="createInputs" placeholder="Please enter ISBN" required>
+                <input type="text" name="book_page_count_form" class="createInputs" placeholder="Please enter pages of book" required>
+                <input type="text" name="book_publisher_form" class="createInputs" placeholder="Please enter name of publisher" required>
+                <input type="text" name="book_language_form" class="createInputs" placeholder="Please enter language of book" required>
+                <textarea name="book_description_form" class="textarea" placeholder="Please enter description of book" required></textarea>
+                <button type="submit" class="createButton" >Create book</button>
             </form>
         </div>`;
 
